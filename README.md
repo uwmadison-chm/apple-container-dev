@@ -1,5 +1,5 @@
 # apple-container-dev
-A Dockerfile and entrypoint script for launching agents with Apple's `container`
+A Dockerfile and entrypoint script for launching agents with Apple's [container](https://github.com/apple/container).
 
 Sets up a fairly minimal environment, adding a local user with matching username and uid for
 your current user. Also has an entrypoint script that fixes permissions on $SSH_AUTH_SOCK inside the container, so your user can use it.
