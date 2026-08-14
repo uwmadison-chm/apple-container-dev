@@ -22,7 +22,7 @@ acbuild() {
 
 acsh() {
   # Start a container using the dev image
-  local name="${1:?usage: cshell NAME [IMAGE]}"
+  local name="${1:?usage: acsh NAME [IMAGE]}"
   local image="${2:-dev}"
   local src="${CSHELL_SRC:-$PWD}"
   local target="/home/dev/src"
@@ -35,7 +35,7 @@ acsh() {
   fi
 
   container exec -u root "$name" sh -c '[ -n "$SSH_AUTH_SOCK" ] && chmod 666 "$SSH_AUTH_SOCK"' 2>/dev/null
-  container exec -it -u dev --workdir "$target" "$name" bash
+  container exec -it --workdir "$target" "$name" bash
 }
 
 acroot() { container exec -u root -it "$1" bash; }
