@@ -9,6 +9,11 @@ Gives you:
 * github client
 * and a few other packages
 
+## Initial setup
+
+* Install the [Apple Container runtime](https://github.com/apple/container).
+* run `container system start` in a terminal
+
 ## The zsh functions
 
 You might want these in your .zshrc:
