@@ -14,6 +14,8 @@ Gives you:
 * Install the [Apple Container runtime](https://github.com/apple/container).
 * run `container system start` in a terminal
 
+Note that if Apple fixes the `--ssh` option for `container exec` to set permissions correctly for non-root container users, 
+
 ## The zsh functions
 
 You might want these in your .zshrc:
@@ -62,3 +64,4 @@ Normal use:
 
 * Use 1Password's ssh agent and set up SSH_AUTH_SOCK in your host OS to use it. It's convenient. It's also secure -- the container can't exfiltrate your private key because it can never see the key at all.
 * If you're using `uv`, set `UV_PROJECT_ENVIRONMENT="/home/dev/.local/venv"` in your container's `.profile` so your host and container venv directories don't fight
+* You really don't want to do development in your container as `root` -- `root` can do a bunch of things normal users can't, which may mask problems you'll unearth when deploying. Stay as the `dev` user for work.
