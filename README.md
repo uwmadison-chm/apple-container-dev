@@ -55,5 +55,5 @@ Normal use:
 
 ## Recommendations
 
-* Use 1Password's ssh agent and set up SSH_AUTH_SOCK in your host OS to use it. It's nice. It's secure.
+* Use 1Password's ssh agent and set up SSH_AUTH_SOCK in your host OS to use it. It's convenient. It's also secure -- the container can't exfiltrate your private key because it can never see the key at all.
 * If you're using `uv`, set `UV_PROJECT_ENVIRONMENT="/home/dev/.local/venv"` in your container's `.profile` so your host and container venv directories don't fight
